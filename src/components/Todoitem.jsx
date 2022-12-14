@@ -1,7 +1,5 @@
 export const TodoItem = (props) => {
     const {item, handleChange} = props;
-    console.log(props);
-
 
     return (
         <label className={"panel-block"}>
@@ -10,7 +8,8 @@ export const TodoItem = (props) => {
           checked={item.done}
           onChange={() => handleChange(item)}
           />
-          {item.text}
+          <span className={item.done ? "has-text-grey-light" : ""}>{item.text}</span>
+          
         </label>
     )
 }
